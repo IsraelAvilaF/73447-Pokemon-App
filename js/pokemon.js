@@ -26,9 +26,10 @@ function pintarPokemones(arrayPokemones) {
 
     // 2. Borrar el contenido del contenedor
     console.log(`pintarpokemones`, arrayPokemones);
-    
+
     // 3. Recorrer el array de pokemones con un forEach
     arrayPokemones.forEach(pokemon => {
+        // 4. Crear un elemento HTML por cada pokemón
 
     })
 }
