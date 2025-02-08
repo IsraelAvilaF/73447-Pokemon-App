@@ -33,12 +33,17 @@ function pintarPokemones(arrayPokemones) {
 
         const ID = extraerPokemonID(pokemon.url)
 
-        // const pokemonID = pokemon.url.split(`/`).at(-2);
+        const pokemonID = pokemon.url.split(`/`).at(-2);
 
         pokemonListHTML.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
                                         ${pokemon.name}
                                         <a href="/pages/detail.html?pokemon=${ID}" class="btn btn-primary btn-sm">Ver</a>
                                     </li>`
+
+        // const listItem = document.createElement(`li`);
+        // listItem.classList.add(`list-group-item`, `d-flex`, `justify-content-between`, `align-items-center`)
+        // listItem.innerText = pokemon.name;
+        // pokemonListHTML.appendChild(listItem);
     })
 }
 

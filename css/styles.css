@@ -14,3 +14,13 @@
     grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
     gap: 1rem;
 }
+
+.pokemon-detail{
+    height: 400px;
+    
+    .pokemon-image{
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
