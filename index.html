@@ -13,6 +13,7 @@
 
     <!-- #Estilos Personalizados -->
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/weather.css">
     
 <body>
     <header>
@@ -106,6 +107,32 @@
         </section>
     </main>
 
+    <div class="weather-container">
+        <div class="weather-input-container d-flex gap-2">
+            <input
+            type="text"
+            id="weather-search"
+            class="weather-input"
+            placeholder="Ingrese ciudad"
+            />
+            <button class="btn btn-dark" id="weather-save">
+                🔍
+            </button>
+        </div>
+        <div class="weather-info">
+            <div class="weather-info__city" id="weather-location">-</div>
+            <div class="weather-info__temp" id="weather-temp">-</div>
+            <div class="weather-info__icon" id="weather-icon"></div>
+            <div
+            class="weather-datetime-container"
+            id="weather-datetime-container"
+            >
+            Registro:
+            </div>
+        </div>
+    </div>
+
     <script src="/js/pokemon.js"></script>
+    <script src="/js/weather.js"></script>
 </body>
 </html>

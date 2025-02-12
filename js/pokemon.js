@@ -4,7 +4,7 @@ const URL_API = `https://pokeapi.co/api/v2`;
 function obtenerPokemones(){
     // 1. Hacer una petición al servidor con un metodo asincrónico con axios
     axios.get(`${URL_API}/pokemon`).then(response =>{
-                                        console.log(`Respuesta desde pokemonapi`, response);
+                                        // console.log(`Respuesta desde pokemonapi`, response);
 
                                         // 2. Guardar la respuesta en la variable pokemones
                                         pokemones = response.data.results
@@ -25,7 +25,7 @@ function pintarPokemones(arrayPokemones) {
     const pokemonListHTML = document.getElementById(`poke`);
 
     // 2. Borrar el contenido del contenedor
-    console.log(`pintarpokemones`, arrayPokemones);
+    // console.log(`pintarpokemones`, arrayPokemones);
 
     // 3. Recorrer el array de pokemones con un forEach
     arrayPokemones.forEach(pokemon => {
@@ -33,17 +33,26 @@ function pintarPokemones(arrayPokemones) {
 
         const ID = extraerPokemonID(pokemon.url)
 
-        const pokemonID = pokemon.url.split(`/`).at(-2);
+        // const pokemonID = pokemon.url.split(`/`).at(-2);
 
-        pokemonListHTML.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
-                                        ${pokemon.name}
-                                        <a href="/pages/detail.html?pokemon=${ID}" class="btn btn-primary btn-sm">Ver</a>
-                                    </li>`
+        // pokemonListHTML.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
+        //                                 ${pokemon.name}
+        //                                 <a href="/pages/detail.html?pokemon=${ID}" class="btn btn-primary btn-sm">Ver</a>
+        //                             </li>`
 
-        // const listItem = document.createElement(`li`);
-        // listItem.classList.add(`list-group-item`, `d-flex`, `justify-content-between`, `align-items-center`)
-        // listItem.innerText = pokemon.name;
-        // pokemonListHTML.appendChild(listItem);
+        const listItem = document.createElement(`li`);
+        listItem.classList.add(`list-group-item`, `d-flex`, `justify-content-between`, `align-items-center`)
+        listItem.innerText = pokemon.name;
+        const aHTML = document.createElement(`a`);
+        aHTML.classList.add(`btn`, `btn-primary`, `btn-sm`)
+        aHTML.innerText = `Ver`;
+        aHTML.href = `/pages/detail.html?pokemon=${ID}`;
+        // aHTML.setAttribute(`href`, `/pages/detail.html?pokemon=${ID}`);
+        aHTML.style.backgroundColor = `red`;
+        aHTML.style.color = `white`
+        aHTML.style.borderBottomStyle = `solid`
+        listItem.appendChild(aHTML); 
+        pokemonListHTML.appendChild(listItem);
     })
 }
 
