@@ -49,3 +49,7 @@
 .weather-info .weather-info__temp span {
     font-size: 1.5rem;
 }
+
+#weather-save:disabled {
+    filter: grayscale(1) opacity(0.5);
+}
